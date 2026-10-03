@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhD Guideship Form | Mount Carmel University</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f4f4f4; padding: 2rem 1rem;
+      font-family: 'Times New Roman', Times, serif;
+      color: #222; line-height: 1.5; font-size: 15px;
+    }
+    .page {
+      max-width: 950px; margin: 0 auto; background: #fff;
+      padding: 3rem 3.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    .header { text-align: center; border-bottom: 2px solid #6b1e2b; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .header img { max-height: 90px; margin-bottom: 0.6rem; }
+    .header h1 { font-size: 1.7rem; color: #6b1e2b; letter-spacing: 1px; font-weight: 700; }
+    .header .sub { font-size: 1rem; color: #333; font-style: italic; margin-top: 3px; font-weight: bold; }
+    .header .tag { font-size: 0.88rem; color: #555; margin-top: 2px; }
+    .form-title { text-align: center; font-size: 1.5rem; color: #6b1e2b; margin: 1.5rem 0 0.3rem; font-weight: 700; text-decoration: underline; }
+    .form-subtitle { text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 2rem; font-style: italic; }
+    .section { margin-bottom: 2rem; }
+    .section-title { font-size: 1.05rem; color: #6b1e2b; background: #f5efeb; padding: 0.5rem 0.9rem; border-left: 4px solid #6b1e2b; margin-bottom: 1rem; font-weight: 700; }
+    .eligibility-section { border: 2px solid #6b1e2b; border-radius: 4px; padding: 1.2rem 1.3rem; background: #fffdf9; margin-bottom: 2rem; }
+    .eligibility-section .section-title { background: #6b1e2b; color: #fff; border-left: none; padding: 0.6rem 1rem; margin: -1.2rem -1.3rem 1rem -1.3rem; border-radius: 2px 2px 0 0; }
+    .annexure-title { font-size: 1rem; color: #333; margin: 1.2rem 0 0.6rem; font-weight: 700; background: #faf7f4; padding: 0.4rem 0.8rem; border-left: 3px solid #b8936b; }
+    .row { display: flex; gap: 1rem; margin-bottom: 0.9rem; align-items: flex-start; flex-wrap: wrap; }
+    .field { flex: 1; display: flex; flex-direction: column; min-width: 200px; }
+    .field.full { flex: 100%; }
+    .field label { font-size: 0.9rem; font-weight: 700; color: #333; margin-bottom: 0.25rem; }
+    .req { color: #b23b2e; margin-left: 3px; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea {
+      padding: 0.5rem 0.7rem; border: 1px solid #aaa; font-size: 0.92rem;
+      font-family: 'Times New Roman', serif; background: #fff; color: #222; border-radius: 2px; width: 100%;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #6b1e2b; background: #fffdfa; }
+    textarea { resize: vertical; min-height: 60px; }
+    .table-wrap { overflow-x: auto; margin: 0.8rem 0 1rem; border: 1px solid #ccc; }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 850px; }
+    table.data-table th { background: #f5efeb; color: #333; padding: 0.6rem 0.5rem; border: 1px solid #ccc; text-align: left; font-weight: 700; }
+    table.data-table td { padding: 0.3rem 0.4rem; border: 1px solid #ccc; vertical-align: middle; }
+    table.data-table input { border: none; padding: 0.4rem 0.3rem; font-size: 0.85rem; width: 100%; background: transparent; font-family: 'Times New Roman', serif; }
+    table.data-table input:focus { background: #fffdfa; outline: 1px solid #6b1e2b; }
+    .btn-add { background: #fff; color: #6b1e2b; border: 1px solid #6b1e2b; padding: 0.4rem 0.9rem; border-radius: 3px; cursor: pointer; font-size: 0.85rem; font-family: 'Times New Roman', serif; margin-top: 0.4rem; }
+    .btn-add:hover { background: #f5efeb; }
+    .btn-remove { background: #fff; color: #b23b2e; border: 1px solid #b23b2e; padding: 0.3rem 0.5rem; border-radius: 3px; cursor: pointer; font-size: 0.8rem; }
+    .btn-remove:hover { background: #fdeaea; }
+    .divider { border: none; border-top: 1px dashed #ccc; margin: 1.5rem 0; }
+    .place-date-row { display: flex; justify-content: space-between; gap: 2rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd; }
+    .place-date-row .field { flex: 1; }
+    .radio-group { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem; }
+    .radio-card { border: 1px solid #ccc; padding: 0.9rem 1rem; cursor: pointer; border-radius: 3px; background: #fafafa; transition: all 0.15s; font-size: 0.9rem; }
+    .radio-card:hover { border-color: #999; }
+    .radio-card.selected { border-color: #6b1e2b; background: #f5efeb; box-shadow: 0 0 0 2px rgba(107, 30, 43, 0.15); }
+    .radio-card strong { display: block; color: #6b1e2b; margin-bottom: 4px; font-size: 0.95rem; }
+    .radio-card small { color: #555; line-height: 1.5; display: block; }
+    .upload-box { border: 2px dashed #b8936b; background: #fdfaf6; padding: 1.5rem; text-align: center; border-radius: 4px; cursor: pointer; transition: all 0.2s; margin-bottom: 1rem; }
+    .upload-box:hover { background: #f7f1ea; border-color: #6b1e2b; }
+    .upload-box i { font-size: 2rem; color: #b8936b; display: block; margin-bottom: 0.5rem; }
+    .upload-box p { font-size: 0.95rem; color: #555; margin-bottom: 0.3rem; }
+    .upload-box small { font-size: 0.8rem; color: #888; }
+    .upload-box input[type="file"] { display: none; }
+    .file-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.8rem; }
+    .file-item { display: flex; align-items: center; justify-content: space-between; background: #f5efeb; padding: 0.6rem 0.9rem; border-radius: 3px; border-left: 3px solid #6b1e2b; font-size: 0.88rem; }
+    .file-item .name { display: flex; align-items: center; gap: 8px; color: #333; flex: 1; min-width: 0; }
+    .file-item .name span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-item .size { color: #888; font-size: 0.78rem; margin-left: 8px; }
+    .file-item button { background: none; border: none; color: #b23b2e; cursor: pointer; padding: 4px 8px; font-size: 1rem; }
+    .actions { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ddd; flex-wrap: wrap; }
+    .btn { padding: 0.8rem 2rem; font-size: 1rem; font-family: 'Times New Roman', serif; cursor: pointer; border-radius: 3px; border: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+    .btn-primary { background: #6b1e2b; color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #521a24; }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-secondary { background: #fff; color: #6b1e2b; border: 1px solid #6b1e2b; }
+    .btn-secondary:hover { background: #f5efeb; }
+    .note { background: #fff8e6; border-left: 4px solid #d4a017; padding: 0.7rem 1rem; font-size: 0.85rem; color: #665c3d; margin-top: 1rem; border-radius: 2px; }
+    .note strong { color: #8b6914; }
+    .info-box { background: #eef6fc; border-left: 4px solid #2e6b9e; padding: 0.8rem 1rem; font-size: 0.85rem; color: #1e4a6e; margin: 1rem 0; border-radius: 2px; line-height: 1.6; }
+    .signature-row { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1rem; }
+    .signature-row div { width: 45%; border-top: 1px solid #000; padding-top: 6px; text-align: center; font-size: 0.9rem; }
+    .footer { text-align: center; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.88rem; color: #555; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
+    .modal-overlay.active { display: flex; }
+    .modal { background: #fff; max-width: 520px; width: 100%; padding: 2rem; border-radius: 6px; text-align: center; max-height: 90vh; overflow-y: auto; }
+    .modal .check { width: 60px; height: 60px; background: #2d6a4f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem; }
+    .modal h2 { color: #6b1e2b; font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .modal p { font-size: 0.95rem; color: #444; margin-bottom: 1rem; }
+    .modal .status { text-align: left; background: #f5efeb; padding: 1rem; border-radius: 4px; font-size: 0.88rem; margin: 1rem 0; }
+    .modal .status div { padding: 4px 0; }
+    .modal .email-box { background: #f5efeb; padding: 0.6rem 1rem; border-radius: 3px; display: inline-block; font-weight: 700; color: #6b1e2b; margin: 0.5rem 0; font-size: 0.9rem; word-break: break-all; }
+    .modal ol { text-align: left; padding-left: 1.4rem; font-size: 0.88rem; color: #333; line-height: 1.6; margin: 1rem 0; }
+    .spinner { width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (max-width: 700px) {
+      body { padding: 0.5rem; }
+      .page { padding: 1.2rem 1rem; }
+      .row { flex-direction: column; gap: 0.6rem; }
+      .field { flex: 100%; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .header h1 { font-size: 1.3rem; }
+      .place-date-row { flex-direction: column; }
+      .signature-row { flex-direction: column; gap: 3rem; }
+      .signature-row div { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <img src="logo.png" alt="Mount Carmel Logo" onerror="this.style.display='none'">
+    <h1>MOUNT CARMEL</h1>
+    <div class="sub">(Deemed to be University)</div>
+    <div class="tag">Estd. 1948 | A CSST Institution | Bengaluru | Karnataka</div>
+  </div>
+
+  <div class="form-title">FORM FOR Ph.D. GUIDESHIP RECOGNITION</div>
+  <div class="form-subtitle">MCU / CRD Guidelines - 2026</div>
+
+  <form id="guideshipForm" novalidate>
+
+    <!-- STEP 1 — ELIGIBILITY -->
+    <div class="eligibility-section">
+      <div class="section-title">1. Eligibility for Recognition as Research Supervisor <span class="req" style="color:#ffc107;">*</span></div>
+
+      <div class="info-box">
+        An applicant shall be eligible for recognition under one of the categories specified in Clauses 1, 2 or 3, and shall in every case satisfy the departmental prerequisite.
+      </div>
+
+      <div class="radio-group" id="categoryGroup">
+        <div class="radio-card" data-cat="A" onclick="selectCategory('A')">
+          <strong>1.1 Category A — Professors and Associate Professors (Existing Faculty)</strong>
+          <small>(i) A Ph.D. degree in the concerned discipline or in a cognate discipline approved by the Research Board; and (ii) A minimum of two (2) years of PG teaching experience, during the service, till date. (iii) A minimum of five (5) post-Ph.D. recognized publications. (iv) A minimum of three (3) years of experience post Ph.D.</small>
+        </div>
+        <div class="radio-card" data-cat="B" onclick="selectCategory('B')">
+          <strong>1.2 Category B — Assistant Professors (Entry Level)</strong>
+          <small>(i) A Ph.D. degree in the concerned discipline or in a cognate discipline approved by the Research Board; (ii) A minimum of five (5) years of MCU Experience; (iii) A minimum of two (2) years of PG teaching experience, during the service, till date. (iv) A minimum of three (3) post-Ph.D. recognized publications. (v) A minimum of three (3) years of experience post-Ph.D.</small>
+        </div>
+        <div class="radio-card" data-cat="C" onclick="selectCategory('C')">
+          <strong>1.3 Category C — Relaxed Route for Post-Doctoral Experience</strong>
+          <small>(i) A Ph.D. degree in the concerned discipline or in a cognate discipline approved by the Research Board; (ii) Post-Doctoral Experience of not less than two (2) years; (iii) A minimum of two (2) Post-Ph.D. recognized publications, of which at least one (1) shall arise out of, or be attributable to, the post-doctoral work; (iv) A minimum of two (2) years of MCU Experience; and (v) 1 year of PG Teaching Experience.</small>
+        </div>
+      </div>
+      <input type="hidden" id="selectedCategory" name="selectedCategory" required>
+
+      <div class="note">
+        <strong>Explanation:</strong> The relaxation under this Clause is available once to an applicant and is confined to the reduction of the MCU Experience requirement from five years to two years, and of the publication requirement from three to two, as prescribed above. No further relaxation shall be granted under this Clause.
+      </div>
+
+      <div class="note" style="background:#fdeaea; border-left-color:#b23b2e; color:#6b1e2b;">
+        <strong>NB:</strong> A faculty member seeking recognition as a Ph.D. Research Guide shall have at least <strong>three years of service remaining</strong> before the date of retirement.
+      </div>
+
+      <div style="margin-top: 1rem; font-size: 0.95rem;">
+        <label><input type="checkbox" id="confirmPrereq" required> I confirm that I satisfy the departmental prerequisite and the Associated PG Course has been running for <strong>4 years</strong> <span class="req">*</span></label>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- STEP 2 — APPLICATION DETAILS -->
+    <div class="section">
+      <div class="section-title">Application Form</div>
+    </div>
+
+    <!-- 1. PERSONAL PARTICULARS -->
+    <div class="section">
+      <div class="section-title">1. Personal Particulars</div>
+
+      <div class="row">
+        <div class="field">
+          <label>(a) Name <span class="req">*</span></label>
+          <input type="text" name="fullName" id="fullName" required>
+        </div>
+        <div class="field">
+          <label>(b) Date of Birth and Age <span class="req">*</span></label>
+          <input type="text" name="dob" id="dob" placeholder="DD/MM/YYYY (Age)" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>(c) Nationality <span class="req">*</span></label>
+          <input type="text" name="nationality" id="nationality" required>
+        </div>
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="field">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" name="phone" id="phone" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field full">
+          <label>(d) Address <span class="req">*</span></label>
+          <textarea name="address" id="address" rows="2" required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 2. ACADEMIC QUALIFICATION -->
+    <div class="section">
+      <div class="section-title">2. Academic Qualification (including knowledge of languages)</div>
+      <div class="table-wrap">
+        <table class="data-table" id="qualificationTable">
+          <thead>
+            <tr>
+              <th style="width:40px;">S.NO</th>
+              <th>Degree / Qualification <span class="req">*</span></th>
+              <th>University / Institution <span class="req">*</span></th>
+              <th>Year of Passing <span class="req">*</span></th>
+              <th>Class / Grade / Percentage <span class="req">*</span></th>
+              <th>Languages Known / Remarks <span class="req">*</span></th>
+              <th style="width:60px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="qualificationBody">
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="qualDegree1" required></td>
+              <td><input type="text" name="qualInstitution1" required></td>
+              <td><input type="text" name="qualYear1" placeholder="YYYY" required></td>
+              <td><input type="text" name="qualGrade1" required></td>
+              <td><input type="text" name="qualLanguage1" placeholder="English, Kannada, Hindi" required></td>
+              <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeQualificationRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn-add" onclick="addQualificationRow()"><i class="fas fa-plus"></i> Add Qualification Row</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 3. SUMMARY OF EMPLOYMENT -->
+    <div class="section">
+      <div class="section-title">3. Summary of Employment (Chronologically arranged)</div>
+      <div class="table-wrap">
+        <table class="data-table" id="employmentTable">
+          <thead>
+            <tr>
+              <th style="width:40px;">S.NO</th>
+              <th>Institution / Employer <span class="req">*</span></th>
+              <th>Designation / Position <span class="req">*</span></th>
+              <th>From <span class="req">*</span></th>
+              <th>To <span class="req">*</span></th>
+              <th>Nature of Duties / Responsibilities <span class="req">*</span></th>
+              <th style="width:60px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="employmentBody">
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="empInstitution1" required></td>
+              <td><input type="text" name="empDesignation1" required></td>
+              <td><input type="text" name="empFrom1" placeholder="MM/YYYY" required></td>
+              <td><input type="text" name="empTo1" placeholder="MM/YYYY / Present" required></td>
+              <td><input type="text" name="empRole1" required></td>
+              <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeEmploymentRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn-add" onclick="addEmploymentRow()"><i class="fas fa-plus"></i> Add Employment Row</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 4. PROFESSIONAL EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">4. Professional Experience (under different headings)</div>
+
+      <div class="annexure-title">(a) Teaching</div>
+      <div class="row">
+        <div class="field">
+          <label>Years of Experience <span class="req">*</span></label>
+          <input type="text" name="teachingExp" id="teachingExp" required>
+        </div>
+        <div class="field full">
+          <label>Details (Institution, Position, Period)</label>
+          <input type="text" name="teachingDetails" id="teachingDetails">
+        </div>
+      </div>
+
+      <div class="annexure-title">(b) Research</div>
+      <div class="row">
+        <div class="field">
+          <label>Years of Experience <span class="req">*</span></label>
+          <input type="text" name="researchExp" id="researchExp" required>
+        </div>
+        <div class="field full">
+          <label>Details (Institution, Position, Period)</label>
+          <input type="text" name="researchDetails" id="researchDetails">
+        </div>
+      </div>
+
+      <div class="annexure-title">(c) Administrative</div>
+      <div class="row">
+        <div class="field">
+          <label>Years of Experience <span class="req">*</span></label>
+          <input type="text" name="adminExp" id="adminExp" required>
+        </div>
+        <div class="field full">
+          <label>Details (Institution, Position, Period)</label>
+          <input type="text" name="adminDetails" id="adminDetails">
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 5. RESEARCH EXPERTISE -->
+    <div class="section">
+      <div class="section-title">5. Research Expertise / Specialization</div>
+      <div class="row">
+        <div class="field full">
+          <input type="text" name="expertise" id="expertise" required>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 6. LIST OF PUBLICATIONS -->
+    <div class="section">
+      <div class="section-title">6. List of Publications: Papers published in academic journals (latest)</div>
+
+      <div class="info-box">
+        <strong>Clause III — Conditions Governing Publications:</strong> Only publications in journals indexed in <strong>Scopus or Web of Science</strong> at the time of publication shall be counted. Conference abstracts, proceedings papers (not indexed), book reviews, editorials, letters, errata, popular articles, and papers in discontinued / delisted / predatory / cloned journals are <strong>not counted</strong>. Post-Ph.D. publications must fall after the Ph.D. award date. Papers arising wholly out of the applicant's own Ph.D. thesis work published after the award — <strong>maximum 1 such paper</strong> — unless otherwise permitted by the Research Board.
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Ph.D. degree awarded (DD/MM/YYYY) <span class="req">*</span></label>
+          <input type="text" name="phdAwardDate" id="phdAwardDate" placeholder="DD/MM/YYYY" required>
+        </div>
+        <div class="field">
+          <label>Total Post-Ph.D. Recognized Publications <span class="req">*</span></label>
+          <input type="number" name="totalPostPhd" id="totalPostPhd" min="0" required>
+        </div>
+      </div>
+
+      <div class="annexure-title">Table 1: Journal Publications (Descending Chronological Order)</div>
+      <div class="table-wrap">
+        <table class="data-table" id="journalTable">
+          <thead>
+            <tr>
+              <th style="width:40px;">S.NO</th>
+              <th>Title of the Paper <span class="req">*</span></th>
+              <th>Name of the Journal &amp; Publisher <span class="req">*</span></th>
+              <th>Volume, issue, pages &amp; Year <span class="req">*</span></th>
+              <th>DOI with hyperlink <span class="req">*</span></th>
+              <th>Indexed in Scopus / Web of Science <span class="req">*</span></th>
+              <th style="width:60px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="journalBody">
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="jTitle1" required></td>
+              <td><input type="text" name="jJournal1" required></td>
+              <td><input type="text" name="jVol1" placeholder="12(3), 45-67, 2025" required></td>
+              <td><input type="text" name="jDoi1" placeholder="https://doi.org/..." required></td>
+              <td><input type="text" name="jIndex1" placeholder="Scopus / WoS" required></td>
+              <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeJournalRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn-add" onclick="addJournalRow()"><i class="fas fa-plus"></i> Add Journal Row</button>
+
+      <div class="annexure-title">Table 2: Book / Book Chapter Publications (Descending Chronological Order)</div>
+      <div class="table-wrap">
+        <table class="data-table" id="bookTable">
+          <thead>
+            <tr>
+              <th style="width:40px;">S.NO</th>
+              <th>Title of the Book / Book Chapter <span class="req">*</span></th>
+              <th>Title of the Book (if Book chapter) <span class="req">*</span></th>
+              <th>Edition and Volume, Year &amp; Month of Publication <span class="req">*</span></th>
+              <th>ISBN <span class="req">*</span></th>
+              <th>Indexed in Scopus / Web of Science <span class="req">*</span></th>
+              <th style="width:60px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookBody">
+            <tr>
+              <td>1</td>
+              <td><input type="text" name="bTitle1" required></td>
+              <td><input type="text" name="bBookTitle1" required></td>
+              <td><input type="text" name="bEdition1" placeholder="2nd ed., Vol 1, 2025, Jan" required></td>
+              <td><input type="text" name="bIsbn1" required></td>
+              <td><input type="text" name="bIndex1" required></td>
+              <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeBookRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn-add" onclick="addBookRow()"><i class="fas fa-plus"></i> Add Book/Chapter Row</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 7-11 -->
+    <div class="section">
+      <div class="section-title">7. Membership of Professional Boards</div>
+      <div class="row"><div class="field full"><input type="text" name="profBoards" id="profBoards" required></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">8. Membership of Editorial Boards</div>
+      <div class="row"><div class="field full"><input type="text" name="editorialBoards" id="editorialBoards" required></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">9. Examinership at P.G. level</div>
+      <div class="row"><div class="field full"><input type="text" name="examinership" id="examinership" required></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">10. Chairmanship and / or Membership of Academic Bodies</div>
+      <div class="row"><div class="field full"><input type="text" name="academicBodies" id="academicBodies" required></div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">11. Award / Recognition of Research Work</div>
+      <div class="row"><div class="field full"><input type="text" name="awards" id="awards" required></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ANNEXURES -->
+    <div class="section">
+      <div class="section-title">Annexures to be Attached (Mention the document Numbers &amp; References Only)</div>
+
+      <div class="annexure-title">Annexure 1 — Proof of Ph.D. Certificate / Post-Doctoral Experience letter or Sanction letter and Master's Certificate <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex1" id="annex1" placeholder="Reference / File no." required></div></div>
+
+      <div class="annexure-title">Annexure 2 — Previous experience certificate <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex2" id="annex2" placeholder="Reference / File no." required></div></div>
+
+      <div class="annexure-title">Annexure 3(a) — Attach full journal paper as pdf (Post-Ph.D. refer Clause III Guidelines) <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex3a" id="annex3a" placeholder="Upload below or reference" required></div></div>
+
+      <div class="annexure-title">Annexure 3(b) — For books: Attach the page showing your affiliation, title and ISBN as proof <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex3b" id="annex3b" placeholder="Reference" required></div></div>
+
+      <div class="annexure-title">Annexure 3(c) — For book chapters: Attach the page showing your affiliation, title of chapter and book along with ISBN as proof <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex3c" id="annex3c" placeholder="Reference" required></div></div>
+
+      <div class="annexure-title">Annexure 3(d) — Certificate of grant patent <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex3d" id="annex3d" placeholder="Patent number / reference" required></div></div>
+
+      <div class="annexure-title">Annexure 4 — Govt. funded projects sanction / Completion letter <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex4" id="annex4" placeholder="Project ref / funding agency" required></div></div>
+
+      <div class="annexure-title">Annexure 5 — Proof for Award / Recognition of Research Work <span class="req">*</span></div>
+      <div class="row"><div class="field full"><input type="text" name="annex5" id="annex5" placeholder="Reference" required></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- RATIFICATION -->
+    <div class="section">
+      <div class="section-title">Ratification Route (BCU-43 / MCU-CRD)</div>
+
+      <div class="row">
+        <div class="field full">
+          <label>Are you an existing BCU-43 Guide (already screened &amp; approved)? <span class="req">*</span></label>
+          <select name="bcuGuide" id="bcuGuide" required>
+            <option value="">-- Select --</option>
+            <option value="yes">Yes — Already screened &amp; approved by BCU Committee</option>
+            <option value="no">No — New Guideship (Under MCU / CRD Guidelines)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="annexure-title">Section I — For Existing Guides (BCU-43)</div>
+      <div class="row"><div class="field full"><label>Copy of the BCU approval / screening committee proceedings</label><input type="text" name="bcuApproval" id="bcuApproval"></div></div>
+      <div class="row"><div class="field full"><label>Supporting documents forwarded by BCU</label><input type="text" name="bcuSupport" id="bcuSupport"></div></div>
+      <div class="row"><div class="field full"><label>Duly filled ratification application form</label><input type="text" name="ratificationForm" id="ratificationForm"></div></div>
+
+      <div class="annexure-title">Section II — For New Guideship (MCU / CRD Guidelines)</div>
+      <div class="row"><div class="field full"><label>Copy of circulated guidelines + proof of circulation</label><input type="text" name="newGuidelineProof" id="newGuidelineProof"></div></div>
+      <div class="row"><div class="field full"><label>Application submitted within one-week period</label><input type="text" name="newAppDate" id="newAppDate"></div></div>
+      <div class="row"><div class="field full"><label>CRD verification report confirming eligibility</label><input type="text" name="newCrdReport" id="newCrdReport"></div></div>
+      <div class="row"><div class="field full"><label>Approval document of External Research Advisor</label><input type="text" name="newAdvisorApproval" id="newAdvisorApproval"></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- UPLOAD -->
+    <div class="section">
+      <div class="annexure-title">Upload all required PDFs / supporting documents here (All attachments compressed into one ZIP File — Max 25 MB)</div>
+
+      <div class="note">
+        <strong>Required Annexures to Attach:</strong>
+        <ol style="margin: 0.5rem 0 0 1.2rem; font-size: 0.85rem;">
+          <li>Annexure 1 — Proof of Ph.D. Certificate / Post-Doctoral Experience letter / Sanction letter / Master's Certificate</li>
+          <li>Annexure 2 — Previous Experience Certificate</li>
+          <li>Annexure 3(a) — Full journal paper PDFs (Post-Ph.D., refer Clause III)</li>
+          <li>Annexure 3(b) — For books: affiliation, title &amp; ISBN proof</li>
+          <li>Annexure 3(c) — For book chapters: affiliation, chapter title, book title &amp; ISBN proof</li>
+          <li>Annexure 3(d) — Patent grant certificate</li>
+          <li>Annexure 4 — Govt. funded project sanction / completion letter</li>
+          <li>Annexure 5 — Award / recognition proof</li>
+        </ol>
+      </div>
+      &nbsp;
+      <div class="upload-box">
+        <label for="singleFileUpload" style="cursor:pointer; display:block;">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Click here to upload all required annexure files in one ZIP file</p>
+          <small>Max 25 MB · Accepts PDF, DOC, DOCX, JPG, PNG, ZIP</small>
+        </label>
+        <input type="file" id="singleFileUpload" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip">
+      </div>
+      <div class="file-list" id="fileList"></div>
+    </div>
+
+    <!-- PLACE + DATE + SIGNATURE -->
+    <div class="place-date-row">
+      <div class="field">
+        <label>Place <span class="req">*</span></label>
+        <input type="text" name="place" id="place" required>
+      </div>
+      <div class="field">
+        <label>Date <span class="req">*</span></label>
+        <input type="date" name="declDate" id="declDate" required>
+      </div>
+    </div>
+
+    <div class="signature-row">
+      <div>Applicant's Signature</div>
+      <div>HOD / Competent Authority</div>
+    </div>
+
+    <!-- DECLARATION -->
+    <div class="section" style="margin-top: 2rem;">
+      <div class="section-title">Declaration</div>
+      <div class="info-box">
+        I hereby declare that the information furnished above is true and correct to the best of my knowledge. I understand that any false statement may result in the rejection of my application. I agree to abide by the rules and regulations of Mount Carmel University and the MCU / CRD guidelines.
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn btn-secondary" onclick="resetForm()">
+        <i class="fas fa-undo"></i> Reset Form
+      </button>
+      <button type="submit" class="btn btn-primary" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Submit Application
+      </button>
+    </div>
+
+  </form>
+
+  <div class="footer">
+    <i class="fas fa-envelope"></i> Send the application form with all the annexures as a single file (zip) to: <strong>Guideshipphd@mccblr.edu.in</strong>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="check"><i class="fas fa-check"></i></div>
+    <h2>Application Submitted!</h2>
+    <p>Your Ph.D. Guideship application has been processed.</p>
+
+    <div class="status" id="modalStatus"></div>
+
+    <div class="email-box">
+      <i class="fas fa-envelope"></i> Guideshipphd@mccblr.edu.in
+    </div>
+
+    <ol>
+      <li>A single <strong>.zip</strong> package with your complete application has been downloaded.</li>
+      <li>Your email app will open with the university address pre-filled.</li>
+      <li><strong>Attach the downloaded ZIP file.</strong></li>
+      <li>Recommended: keep the ZIP in a folder named with your name and date for tracking.</li>
+      <li>Click <strong>Send</strong>.</li>
+    </ol>
+
+    <p style="font-size: 0.8rem; color: #888;">
+      If your email app doesn't open, send the files manually to the address above.
+    </p>
+
+    <button class="btn btn-primary" onclick="closeModal()">
+      <i class="fas fa-check"></i> Got it
+    </button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+  // ============================================================
+  // ⚙️ CONFIG
+  // ============================================================
+  const CONFIG = {
+    primaryEmail: 'Guideshipphd@mccblr.edu.in',
+    subjectPrefix: 'PhD Guideship Application',
+    // 👇 OPTIONAL backend. Leave empty string '' to skip backend entirely.
+    // If you deploy the backend, paste the URL (with /api/send-guideship) here.
+    backendUrl: ''
+  };
+  const MAX_FILES = 5;
+  const MAX_SIZE_MB = 25;
+
+  function selectCategory(cat) {
+    document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+    document.querySelector(`.radio-card[data-cat="${cat}"]`).classList.add('selected');
+    document.getElementById('selectedCategory').value = cat;
+  }
+
+  // Academic Qualification
+  let qualificationCount = 1;
+  function addQualificationRow() {
+    qualificationCount++;
+    const tbody = document.getElementById('qualificationBody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${qualificationCount}</td>
+      <td><input type="text" name="qualDegree${qualificationCount}" required></td>
+      <td><input type="text" name="qualInstitution${qualificationCount}" required></td>
+      <td><input type="text" name="qualYear${qualificationCount}" placeholder="YYYY" required></td>
+      <td><input type="text" name="qualGrade${qualificationCount}" required></td>
+      <td><input type="text" name="qualLanguage${qualificationCount}" placeholder="English, Kannada, Hindi" required></td>
+      <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeQualificationRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+    `;
+    tbody.appendChild(row);
+    updateQualificationSerial();
+  }
+  function removeQualificationRow(btn) {
+    const row = btn.closest('tr');
+    const tbody = row.parentNode;
+    if (tbody.children.length > 1) { row.remove(); updateQualificationSerial(); }
+    else alert('At least one row is required.');
+  }
+  function updateQualificationSerial() {
+    document.querySelectorAll('#qualificationBody tr').forEach((row, idx) => row.cells[0].textContent = idx + 1);
+    qualificationCount = document.querySelectorAll('#qualificationBody tr').length;
+  }
+
+  // Employment Summary
+  let employmentCount = 1;
+  function addEmploymentRow() {
+    employmentCount++;
+    const tbody = document.getElementById('employmentBody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${employmentCount}</td>
+      <td><input type="text" name="empInstitution${employmentCount}" required></td>
+      <td><input type="text" name="empDesignation${employmentCount}" required></td>
+      <td><input type="text" name="empFrom${employmentCount}" placeholder="MM/YYYY" required></td>
+      <td><input type="text" name="empTo${employmentCount}" placeholder="MM/YYYY / Present" required></td>
+      <td><input type="text" name="empRole${employmentCount}" required></td>
+      <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeEmploymentRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+    `;
+    tbody.appendChild(row);
+    updateEmploymentSerial();
+  }
+  function removeEmploymentRow(btn) {
+    const row = btn.closest('tr');
+    const tbody = row.parentNode;
+    if (tbody.children.length > 1) { row.remove(); updateEmploymentSerial(); }
+    else alert('At least one row is required.');
+  }
+  function updateEmploymentSerial() {
+    document.querySelectorAll('#employmentBody tr').forEach((row, idx) => row.cells[0].textContent = idx + 1);
+    employmentCount = document.querySelectorAll('#employmentBody tr').length;
+  }
+
+  // Journals
+  let journalCount = 1;
+  function addJournalRow() {
+    journalCount++;
+    const tbody = document.getElementById('journalBody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${journalCount}</td>
+      <td><input type="text" name="jTitle${journalCount}" required></td>
+      <td><input type="text" name="jJournal${journalCount}" required></td>
+      <td><input type="text" name="jVol${journalCount}" required></td>
+      <td><input type="text" name="jDoi${journalCount}" required></td>
+      <td><input type="text" name="jIndex${journalCount}" required></td>
+      <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeJournalRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+    `;
+    tbody.appendChild(row);
+    updateJournalSerial();
+  }
+  function removeJournalRow(btn) {
+    const row = btn.closest('tr');
+    const tbody = row.parentNode;
+    if (tbody.children.length > 1) { row.remove(); updateJournalSerial(); }
+    else alert('At least one row is required.');
+  }
+  function updateJournalSerial() {
+    document.querySelectorAll('#journalBody tr').forEach((row, idx) => row.cells[0].textContent = idx + 1);
+    journalCount = document.querySelectorAll('#journalBody tr').length;
+  }
+
+  // Books
+  let bookCount = 1;
+  function addBookRow() {
+    bookCount++;
+    const tbody = document.getElementById('bookBody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${bookCount}</td>
+      <td><input type="text" name="bTitle${bookCount}" required></td>
+      <td><input type="text" name="bBookTitle${bookCount}" required></td>
+      <td><input type="text" name="bEdition${bookCount}" required></td>
+      <td><input type="text" name="bIsbn${bookCount}" required></td>
+      <td><input type="text" name="bIndex${bookCount}" required></td>
+      <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeBookRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+    `;
+    tbody.appendChild(row);
+    updateBookSerial();
+  }
+  function removeBookRow(btn) {
+    const row = btn.closest('tr');
+    const tbody = row.parentNode;
+    if (tbody.children.length > 1) { row.remove(); updateBookSerial(); }
+    else alert('At least one row is required.');
+  }
+  function updateBookSerial() {
+    document.querySelectorAll('#bookBody tr').forEach((row, idx) => row.cells[0].textContent = idx + 1);
+    bookCount = document.querySelectorAll('#bookBody tr').length;
+  }
+
+  // Files
+  let uploadedFiles = [];
+  const fileInput = document.getElementById('singleFileUpload');
+  const fileList = document.getElementById('fileList');
+
+  fileInput.addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    uploadedFiles = [];
+    for (const file of files) {
+      if (uploadedFiles.length >= MAX_FILES) { alert(`Maximum ${MAX_FILES} files allowed.`); break; }
+      if (file.size > MAX_SIZE_MB * 1024 * 1024) { alert(`"${file.name}" exceeds ${MAX_SIZE_MB} MB.`); continue; }
+      if (uploadedFiles.some(f => f.name === file.name && f.size === file.size)) continue;
+      uploadedFiles.push(file);
+    }
+    renderFiles();
+  });
+
+  function renderFiles() {
+    fileList.innerHTML = '';
+    uploadedFiles.forEach((file, idx) => {
+      const size = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `
+        <div class="name">
+          <i class="fas fa-file-alt" style="color:#6b1e2b;"></i>
+          <span>${file.name}</span>
+          <span class="size">${size}</span>
+        </div>
+        <button type="button" onclick="removeFile(${idx})"><i class="fas fa-times"></i></button>
+      `;
+      fileList.appendChild(item);
+    });
+  }
+
+  function removeFile(idx) { uploadedFiles.splice(idx, 1); renderFiles(); }
+
+  function val(id) {
+    const el = document.getElementById(id);
+    return el ? (el.value.trim() || '—') : '—';
+  }
+
+  function getCategoryText() {
+    const cat = document.getElementById('selectedCategory').value;
+    if (!cat) return '—';
+    const card = document.querySelector(`.radio-card[data-cat="${cat}"]`);
+    return card ? card.querySelector('strong').textContent : cat;
+  }
+
+  function getQualificationRows() {
+    return Array.from(document.querySelectorAll('#qualificationBody tr')).map((row, idx) => {
+      const i = row.querySelectorAll('input');
+      return { sNo: idx + 1, degree: i[0]?.value || '—', institution: i[1]?.value || '—', year: i[2]?.value || '—', grade: i[3]?.value || '—', language: i[4]?.value || '—' };
+    });
+  }
+  function getEmploymentRows() {
+    return Array.from(document.querySelectorAll('#employmentBody tr')).map((row, idx) => {
+      const i = row.querySelectorAll('input');
+      return { sNo: idx + 1, institution: i[0]?.value || '—', designation: i[1]?.value || '—', from: i[2]?.value || '—', to: i[3]?.value || '—', role: i[4]?.value || '—' };
+    });
+  }
+  function getJournalRows() {
+    return Array.from(document.querySelectorAll('#journalBody tr')).map((row, idx) => {
+      const i = row.querySelectorAll('input');
+      return { sNo: idx + 1, title: i[0]?.value || '—', journal: i[1]?.value || '—', vol: i[2]?.value || '—', doi: i[3]?.value || '—', index: i[4]?.value || '—' };
+    });
+  }
+  function getBookRows() {
+    return Array.from(document.querySelectorAll('#bookBody tr')).map((row, idx) => {
+      const i = row.querySelectorAll('input');
+      return { sNo: idx + 1, title: i[0]?.value || '—', bookTitle: i[1]?.value || '—', edition: i[2]?.value || '—', isbn: i[3]?.value || '—', index: i[4]?.value || '—' };
+    });
+  }
+
+  function generateDoc() {
+    const qualificationRows = getQualificationRows();
+    const employmentRows = getEmploymentRows();
+    const journalRows = getJournalRows();
+    const bookRows = getBookRows();
+
+    const qRows = qualificationRows.map(r =>
+      `<tr><td>${r.sNo}</td><td>${r.degree}</td><td>${r.institution}</td><td>${r.year}</td><td>${r.grade}</td><td>${r.language}</td></tr>`
+    ).join('');
+    const eRows = employmentRows.map(r =>
+      `<tr><td>${r.sNo}</td><td>${r.institution}</td><td>${r.designation}</td><td>${r.from}</td><td>${r.to}</td><td>${r.role}</td></tr>`
+    ).join('');
+    const jRows = journalRows.map(r =>
+      `<tr><td>${r.sNo}</td><td>${r.title}</td><td>${r.journal}</td><td>${r.vol}</td><td>${r.doi}</td><td>${r.index}</td></tr>`
+    ).join('');
+    const bRows = bookRows.map(r =>
+      `<tr><td>${r.sNo}</td><td>${r.title}</td><td>${r.bookTitle}</td><td>${r.edition}</td><td>${r.isbn}</td><td>${r.index}</td></tr>`
+    ).join('');
+
+    const today = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const fileListHTML = uploadedFiles.length ? uploadedFiles.map(f => '• ' + f.name).join('<br>') : 'None';
+
+    return `
+      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'>
+      <head><meta charset="utf-8"><title>PhD Guideship Application</title>
+      <style>
+        body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; color: #222; margin: 40px; line-height: 1.5; }
+        h1 { color: #6b1e2b; text-align: center; font-size: 18pt; border-bottom: 2px solid #6b1e2b; padding-bottom: 6px; }
+        h2 { color: #6b1e2b; font-size: 13pt; border-left: 4px solid #6b1e2b; padding-left: 8px; margin-top: 22px; background: #f5efeb; padding: 4px 8px; }
+        h3 { color: #333; font-size: 11.5pt; margin-top: 14px; }
+        .header { text-align: center; font-size: 10pt; color: #444; margin-bottom: 8px; }
+        .header strong { font-size: 14pt; color: #6b1e2b; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 10pt; }
+        th { background: #f5efeb; color: #333; font-weight: bold; padding: 6px; border: 1px solid #bbb; text-align: left; }
+        td { padding: 6px; border: 1px solid #bbb; vertical-align: top; }
+        .label { font-weight: bold; background: #f9f5f2; width: 30%; }
+        .note { background: #fff8e6; border-left: 4px solid #d4a017; padding: 8px 12px; font-size: 9.5pt; color: #665c3d; margin: 10px 0; }
+        .info-box { background: #eef6fc; border-left: 4px solid #2e6b9e; padding: 8px 12px; font-size: 9.5pt; color: #1e4a6e; margin: 10px 0; }
+        .cat-badge { display: inline-block; background: #6b1e2b; color: #fff; padding: 3px 14px; border-radius: 12px; font-size: 10pt; font-weight: bold; }
+        .signature { margin-top: 50px; display: flex; justify-content: space-between; }
+        .signature div { width: 45%; border-top: 1px solid #000; padding-top: 6px; text-align: center; font-size: 10pt; }
+      </style></head>
+      <body>
+        <div class="header">
+          <strong>MOUNT CARMEL</strong><br>
+          (Deemed to be University)<br>
+          Estd. 1948 | A CSST Institution | Bengaluru | Karnataka
+        </div>
+        <h1>FORM FOR Ph.D. GUIDESHIP RECOGNITION</h1>
+        <p style="text-align:center;font-size:10pt;color:#666;">MCU / CRD Guidelines - 2026 | Generated: ${today}</p>
+
+        <h2>1. Eligibility for Recognition as Research Supervisor</h2>
+        <table>
+          <tr><td class="label">Selected Category</td><td><span class="cat-badge">${getCategoryText()}</span></td></tr>
+          <tr><td class="label">Departmental Prerequisite Confirmed</td><td>${document.getElementById('confirmPrereq').checked ? 'Yes' : 'No'}</td></tr>
+        </table>
+
+        <h2>1. Personal Particulars</h2>
+        <table>
+          <tr><td class="label">(a) Name</td><td>${val('fullName')}</td></tr>
+          <tr><td class="label">(b) Date of Birth and Age</td><td>${val('dob')}</td></tr>
+          <tr><td class="label">(c) Nationality</td><td>${val('nationality')}</td></tr>
+          <tr><td class="label">Email</td><td>${val('email')}</td></tr>
+          <tr><td class="label">Phone</td><td>${val('phone')}</td></tr>
+          <tr><td class="label">(d) Address</td><td>${val('address')}</td></tr>
+        </table>
+
+        <h2>2. Academic Qualification (including knowledge of languages)</h2>
+        <table>
+          <thead><tr><th>S.NO</th><th>Degree / Qualification</th><th>University / Institution</th><th>Year of Passing</th><th>Class / Grade / Percentage</th><th>Languages Known / Remarks</th></tr></thead>
+          <tbody>${qRows || '<tr><td colspan="6" style="text-align:center;color:#888;">No entries</td></tr>'}</tbody>
+        </table>
+
+        <h2>3. Summary of Employment (Chronologically arranged)</h2>
+        <table>
+          <thead><tr><th>S.NO</th><th>Institution / Employer</th><th>Designation / Position</th><th>From</th><th>To</th><th>Nature of Duties / Responsibilities</th></tr></thead>
+          <tbody>${eRows || '<tr><td colspan="6" style="text-align:center;color:#888;">No entries</td></tr>'}</tbody>
+        </table>
+
+        <h2>4. Professional Experience (under different headings)</h2>
+        <h3>(a) Teaching</h3>
+        <table>
+          <tr><td class="label">Years of Experience</td><td>${val('teachingExp')}</td></tr>
+          <tr><td class="label">Details</td><td>${val('teachingDetails')}</td></tr>
+        </table>
+        <h3>(b) Research</h3>
+        <table>
+          <tr><td class="label">Years of Experience</td><td>${val('researchExp')}</td></tr>
+          <tr><td class="label">Details</td><td>${val('researchDetails')}</td></tr>
+        </table>
+        <h3>(c) Administrative</h3>
+        <table>
+          <tr><td class="label">Years of Experience</td><td>${val('adminExp')}</td></tr>
+          <tr><td class="label">Details</td><td>${val('adminDetails')}</td></tr>
+        </table>
+
+        <h2>5. Research Expertise / Specialization</h2>
+        <table><tr><td>${val('expertise')}</td></tr></table>
+
+        <h2>6. List of Publications: Papers published in academic journals (latest)</h2>
+        <table>
+          <tr><td class="label">Ph.D. Degree Awarded Date</td><td>${val('phdAwardDate')}</td></tr>
+          <tr><td class="label">Total Post-Ph.D. Recognized Publications</td><td>${val('totalPostPhd')}</td></tr>
+        </table>
+        <h3>Table 1: Journal Publications (Descending Chronological Order)</h3>
+        <table>
+          <thead><tr><th>S.NO</th><th>Title of the Paper</th><th>Name of the Journal &amp; Publisher</th><th>Volume, issue, pages &amp; Year</th><th>DOI with hyperlink</th><th>Indexed in Scopus / WoS</th></tr></thead>
+          <tbody>${jRows || '<tr><td colspan="6" style="text-align:center;color:#888;">No entries</td></tr>'}</tbody>
+        </table>
+        <h3>Table 2: Book / Book Chapter Publications (Descending Chronological Order)</h3>
+        <table>
+          <thead><tr><th>S.NO</th><th>Title of the Book / Book Chapter</th><th>Title of the Book (if chapter)</th><th>Edition, Volume, Year &amp; Month</th><th>ISBN</th><th>Indexed in Scopus / WoS</th></tr></thead>
+          <tbody>${bRows || '<tr><td colspan="6" style="text-align:center;color:#888;">No entries</td></tr>'}</tbody>
+        </table>
+
+        <h2>7. Membership of Professional Boards</h2>
+        <table><tr><td>${val('profBoards')}</td></tr></table>
+
+        <h2>8. Membership of Editorial Boards</h2>
+        <table><tr><td>${val('editorialBoards')}</td></tr></table>
+
+        <h2>9. Examinership at P.G. level</h2>
+        <table><tr><td>${val('examinership')}</td></tr></table>
+
+        <h2>10. Chairmanship and / or Membership of Academic Bodies</h2>
+        <table><tr><td>${val('academicBodies')}</td></tr></table>
+
+        <h2>11. Award / recognition of Research Work</h2>
+        <table><tr><td>${val('awards')}</td></tr></table>
+
+        <h2>Annexures to be Attached</h2>
+        <table>
+          <tr><td class="label">Annexure 1 — Ph.D. Certificate / Post-Doctoral / Master's Certificate</td><td>${val('annex1')}</td></tr>
+          <tr><td class="label">Annexure 2 — Previous experience certificate</td><td>${val('annex2')}</td></tr>
+          <tr><td class="label">Annexure 3(a) — Full journal paper PDFs</td><td>${val('annex3a')}</td></tr>
+          <tr><td class="label">Annexure 3(b) — Books affiliation / title / ISBN proof</td><td>${val('annex3b')}</td></tr>
+          <tr><td class="label">Annexure 3(c) — Book chapters affiliation / chapter title / book title / ISBN proof</td><td>${val('annex3c')}</td></tr>
+          <tr><td class="label">Annexure 3(d) — Patent grant certificate</td><td>${val('annex3d')}</td></tr>
+          <tr><td class="label">Annexure 4 — Govt. funded projects</td><td>${val('annex4')}</td></tr>
+          <tr><td class="label">Annexure 5 — Award / recognition proof</td><td>${val('annex5')}</td></tr>
+        </table>
+
+        <h2>Ratification Route</h2>
+        <table>
+          <tr><td class="label">Existing BCU-43 Guide?</td><td>${val('bcuGuide') === 'yes' ? 'Yes — Screened & approved' : (val('bcuGuide') === 'no' ? 'No — New Guideship' : '—')}</td></tr>
+          <tr><td class="label">BCU Approval / Screening Committee</td><td>${val('bcuApproval')}</td></tr>
+          <tr><td class="label">Supporting Documents Forwarded by BCU</td><td>${val('bcuSupport')}</td></tr>
+          <tr><td class="label">Ratification Application Form</td><td>${val('ratificationForm')}</td></tr>
+          <tr><td class="label">New Guideship — Guideline Circulation Proof</td><td>${val('newGuidelineProof')}</td></tr>
+          <tr><td class="label">New Guideship — Application Submission Date</td><td>${val('newAppDate')}</td></tr>
+          <tr><td class="label">New Guideship — CRD Verification Report</td><td>${val('newCrdReport')}</td></tr>
+          <tr><td class="label">New Guideship — External Advisor Approval</td><td>${val('newAdvisorApproval')}</td></tr>
+        </table>
+
+        <h2>Attached Files (Uploaded)</h2>
+        <table>
+          <tr><td class="label">Uploaded Documents</td><td>${fileListHTML}</td></tr>
+        </table>
+
+        <table style="margin-top:20px;">
+          <tr><td class="label">Place</td><td>${val('place')}</td></tr>
+          <tr><td class="label">Date</td><td>${val('declDate')}</td></tr>
+        </table>
+
+        <h2>Declaration</h2>
+        <p style="font-size:10pt;">I hereby declare that the information furnished above is true and correct to the best of my knowledge. I understand that any false statement may result in the rejection of my application. I agree to abide by the rules and regulations of Mount Carmel University and MCU / CRD guidelines.</p>
+
+        <p style="margin-top:20px;font-size:9pt;color:#666;text-align:center;">
+          ⚠️ Send the application form with all the annexures as a single file (zip) to: <strong>Guideshipphd@mccblr.edu.in</strong>
+        </p>
+
+        <div class="signature">
+          <div>Applicant's Signature</div>
+          <div>HOD / Competent Authority</div>
+        </div>
+      </body></html>
+    `;
+  }
+
+  async function createZipBundle() {
+    const zip = new JSZip();
+    const safeName = (val('fullName') || 'Applicant').replace(/[^a-zA-Z0-9]/g, '_');
+    const dateStamp = new Date().toISOString().slice(0, 10);
+
+    const docContent = generateDoc();
+    zip.file(`01_${safeName}_Application_Form.doc`, docContent);
+
+    uploadedFiles.forEach((file, idx) => {
+      const cleanName = `${String(idx + 1).padStart(2, '0')}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '_')}`;
+      zip.file(`02_Attachments/${cleanName}`, file);
+    });
+
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    const zipFileName = `PhD_Guideship_${safeName}_${dateStamp}.zip`;
+    const url = URL.createObjectURL(zipBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = zipFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    return { zipFileName, zipBlob };
+  }
+
+  async function submitZipToBackend(zipBlob, zipFileName) {
+    if (!CONFIG.backendUrl) return { success: false, error: 'Backend not configured' };
+
+    const formData = new FormData();
+    formData.append('to', CONFIG.primaryEmail);
+    formData.append('subject', `${CONFIG.subjectPrefix} - ${val('fullName') || 'Applicant'}`);
+    formData.append('name', val('fullName') || 'Applicant');
+    formData.append('email', val('email') || '');
+    formData.append('phone', val('phone') || '');
+    formData.append('attachment', zipBlob, zipFileName);
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000);
+      const res = await fetch(CONFIG.backendUrl, { method: 'POST', body: formData, signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (!res.ok) {
+        let t = ''; try { t = await res.text(); } catch(_) {}
+        return { success: false, error: `HTTP ${res.status}: ${t || res.statusText}` };
+      }
+      return await res.json();
+    } catch (e) {
+      return { success: false, error: e.name === 'AbortError' ? 'Request timed out' : e.message };
+    }
+  }
+
+  function openEmailClient() {
+    const name = val('fullName');
+    const email = val('email');
+    const fileList = uploadedFiles.map(f => '  • ' + f.name).join('\n') || '  (none)';
+
+    const body =
+`Dear Sir/Madam,
+
+Please find attached the complete application package for recognition as Ph.D. Research Supervisor.
+
+ELIGIBILITY CATEGORY: ${getCategoryText()}
+
+APPLICANT DETAILS
+─────────────────
+Name: ${name}
+Email: ${email}
+Phone: ${val('phone')}
+Ph.D. Award Date: ${val('phdAwardDate')}
+
+ATTACHED FILES
+─────────────────
+${fileList}
+
+I have attached a single ZIP package containing:
+- the generated application form (.doc)
+- all required annexures / PDFs
+
+Kindly consider my application for ratification.
+
+Place: ${val('place')}
+Date:  ${val('declDate')}
+
+Regards,
+${name}`;
+
+    const subject = encodeURIComponent(`${CONFIG.subjectPrefix} – ${name}`);
+    const bodyEnc = encodeURIComponent(body);
+    window.location.href = `mailto:${CONFIG.primaryEmail}?subject=${subject}&body=${bodyEnc}`;
+  }
+
+  function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
+
+  function resetForm() {
+    if (!confirm('Clear all entered data?')) return;
+    document.getElementById('guideshipForm').reset();
+    document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+    document.getElementById('selectedCategory').value = '';
+    uploadedFiles = [];
+    renderFiles();
+    document.getElementById('journalBody').innerHTML = `
+      <tr><td>1</td>
+        <td><input type="text" name="jTitle1" required></td>
+        <td><input type="text" name="jJournal1" required></td>
+        <td><input type="text" name="jVol1" required></td>
+        <td><input type="text" name="jDoi1" required></td>
+        <td><input type="text" name="jIndex1" required></td>
+        <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeJournalRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>`;
+    document.getElementById('bookBody').innerHTML = `
+      <tr><td>1</td>
+        <td><input type="text" name="bTitle1" required></td>
+        <td><input type="text" name="bBookTitle1" required></td>
+        <td><input type="text" name="bEdition1" required></td>
+        <td><input type="text" name="bIsbn1" required></td>
+        <td><input type="text" name="bIndex1" required></td>
+        <td style="text-align:center;"><button type="button" class="btn-remove" onclick="removeBookRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>`;
+    journalCount = 1;
+    bookCount = 1;
+  }
+
+  document.getElementById('guideshipForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!document.getElementById('selectedCategory').value) {
+      alert('Please select an eligibility category (A, B, or C) first.');
+      document.querySelector('.eligibility-section').scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    let valid = true;
+    this.querySelectorAll('[required]').forEach(f => {
+      if (!f.value.trim() || (f.type === 'checkbox' && !f.checked)) { f.style.borderColor = '#b23b2e'; valid = false; }
+      else f.style.borderColor = '';
+    });
+    if (!valid) { alert('Please fill all required fields (marked with *).'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<div class="spinner"></div> Processing...';
+
+    try {
+      const zipBundle = await createZipBundle();
+      const backendResult = await submitZipToBackend(zipBundle.zipBlob, zipBundle.zipFileName);
+
+      let statusHTML = '';
+      if (backendResult.success) {
+        statusHTML += '<div>✅ <strong>ZIP emailed successfully to the university</strong></div>';
+      } else {
+        statusHTML += '<div>✅ <strong>ZIP package downloaded successfully</strong></div>';
+        statusHTML += `<div style="font-size:0.8rem;color:#888;">${backendResult.error || ''}</div>`;
+      }
+      statusHTML += `<div>📦 <strong>${zipBundle.zipFileName}</strong></div>`;
+      statusHTML += `<div>📎 <strong>Contains ${uploadedFiles.length + 1} file(s)</strong></div>`;
+      document.getElementById('modalStatus').innerHTML = statusHTML;
+
+      document.getElementById('modalOverlay').classList.add('active');
+      setTimeout(openEmailClient, 800);
+    } catch (err) {
+      console.error('Submit failed:', err);
+      alert('Submission failed: ' + err.message);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = original;
+    }
+  });
+
+  document.getElementById('modalOverlay').addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+
+</body>
+</html>s
